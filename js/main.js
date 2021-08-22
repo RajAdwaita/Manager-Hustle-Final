@@ -1,6 +1,6 @@
 (function ($) {
     "use strict";
-    
+
     // loader
     var loader = function () {
         setTimeout(function () {
@@ -10,7 +10,7 @@
         }, 1);
     };
     loader();
-    
+
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 200) {
@@ -20,11 +20,11 @@
         }
     });
     $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
         return false;
     });
-    
-    
+
+
     // Sticky Navbar
     $(window).scroll(function () {
         if ($(this).scrollTop() > 0) {
@@ -33,8 +33,8 @@
             $('.navbar').removeClass('nav-sticky');
         }
     });
-    
-    
+
+
     // Dropdown on mouse hover
     $(document).ready(function () {
         function toggleNavbarMethod() {
@@ -52,7 +52,7 @@
         $(window).resize(toggleNavbarMethod);
     });
 
-    
+
     // Main carousel
     $(".carousel .owl-carousel").owlCarousel({
         autoplay: true,
@@ -62,14 +62,14 @@
         smartSpeed: 300,
         dots: false,
         loop: true,
-        nav : true,
-        navText : [
+        nav: true,
+        navText: [
             '<i class="fa fa-angle-left" aria-hidden="true"></i>',
             '<i class="fa fa-angle-right" aria-hidden="true"></i>'
         ]
     });
-    
-    
+
+
     // Modal Video
     $(document).ready(function () {
         var $videoSrc;
@@ -86,8 +86,8 @@
             $("#video").attr('src', $videoSrc);
         })
     });
-    
-    
+
+
     // Causes carousel
     $(".causes-carousel").owlCarousel({
         autoplay: true,
@@ -98,30 +98,30 @@
         dots: false,
         loop: true,
         responsive: {
-            0:{
-                items:1
+            0: {
+                items: 1
             },
-            576:{
-                items:1
+            576: {
+                items: 1
             },
-            768:{
-                items:2
+            768: {
+                items: 2
             },
-            992:{
-                items:3
+            992: {
+                items: 3
             }
         }
     });
-    
-    
+
+
     // Causes progress
     $('.causes-progress').waypoint(function () {
         $('.progress .progress-bar').each(function () {
             $(this).css("width", $(this).attr("aria-valuenow") + '%');
         });
-    }, {offset: '80%'});
-    
-    
+    }, { offset: '80%' });
+
+
     // Facts counter
     $('[data-toggle="counter-up"]').counterUp({
         delay: 10,
@@ -136,44 +136,81 @@
         dots: true,
         loop: true,
         responsive: {
-            0:{
-                items:1
+            0: {
+                items: 1
             },
-            576:{
-                items:1
+            576: {
+                items: 1
             },
-            768:{
-                items:2
+            768: {
+                items: 2
             },
-            992:{
-                items:3
+            992: {
+                items: 3
             }
         }
     });
-    
-    
+
+
     // Related post carousel
     $(".related-slider").owlCarousel({
         autoplay: true,
         dots: false,
         loop: true,
-        nav : true,
-        navText : [
+        nav: true,
+        navText: [
             '<i class="fa fa-angle-left" aria-hidden="true"></i>',
             '<i class="fa fa-angle-right" aria-hidden="true"></i>'
         ],
         responsive: {
-            0:{
-                items:1
+            0: {
+                items: 1
             },
-            576:{
-                items:1
+            576: {
+                items: 1
             },
-            768:{
-                items:2
+            768: {
+                items: 2
             }
         }
     });
-    
+
 })(jQuery);
 
+
+// var button = document.getElementById('vidbutton')
+// var video = document.getElementById('myvid');
+// var startTime = 2;
+// var endTime = 40;
+
+// button.addEventListener('click', playVideo, !1);
+
+// function playVideo(e) {
+
+//     function checkTime() {
+//         if (video.currentTime >= endTime) {
+//             video.pause();
+//         } else {
+//             /* call checkTime every 1/10th 
+//                second until endTime */
+//             setTimeout(checkTime, 100);
+//         }
+//     }
+
+//     video.currentTime = startTime;
+//     video.play();
+//     checkTime();
+// }
+
+
+
+// function playPause() {
+//     if (myVideo.paused) {
+//         myVideo.play();
+//         ppbutton.innerHTML = "Pause";
+//     }
+//     else {
+//         myVideo.pause();
+//         ppbutton.innerHTML = "Play";
+//     }
+// }
